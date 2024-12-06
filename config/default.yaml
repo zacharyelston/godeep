@@ -1,0 +1,27 @@
+# config/default.yaml
+activeloop:
+  base_url: "https://app.activeloop.ai"
+  org_id: "zacharyelston"
+  dataset_path: "hub://zacharyelston/test-tensor-db-dataset"
+  default_schema:
+    text:
+      type: "text"
+      htype: "text"
+    embedding:
+      type: "vector"
+      htype: "embedding"
+      dimension: 1536
+
+client:
+  timeout: 30
+  max_retries: 3
+  retry_delay: 1
+  transport:
+    max_idle_conns: 10
+    idle_conn_timeout: 30
+    disable_compression: false
+    disable_keep_alives: false
+    tls_handshake_timeout: 10
+    response_header_timeout: 10
+    expect_continue_timeout: 1
+    force_http2: true
